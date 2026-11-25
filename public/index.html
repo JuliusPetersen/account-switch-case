@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Account Switch Case</title>
+<meta name="description" content="Independent product case by Julius Petersen on account switching to Revolut in Portugal.">
+<style>
+  :root {
+    --bg: #fbfbfa; --surface: #ffffff; --text: #1a1a1e; --muted: #5d5d68; --line: #e3e3e7;
+    --accent: #2b45c9; --accent-soft: #eef0fc; --hyp: #8a5a00; --hyp-soft: #fbf3e2; --ok: #1f7a45;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #111114; --surface: #19191e; --text: #ececf1; --muted: #a3a3ae; --line: #2c2c34;
+      --accent: #93a4ff; --accent-soft: #1d2140; --hyp: #e6c27c; --hyp-soft: #2a2316; --ok: #6fd39a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #111114; --surface: #19191e; --text: #ececf1; --muted: #a3a3ae; --line: #2c2c34;
+    --accent: #93a4ff; --accent-soft: #1d2140; --hyp: #e6c27c; --hyp-soft: #2a2316; --ok: #6fd39a;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+    font: 16.5px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+  main { max-width: 740px; margin: 0 auto; padding: 48px 16px 64px; }
+  a { color: var(--accent); }
+  .meta { font-size: 14px; color: var(--muted); margin: 0 0 12px; }
+  h1 { font-size: clamp(27px, 5vw, 36px); line-height: 1.18; margin: 0 0 14px; letter-spacing: -.01em; }
+  .lede { font-size: 18px; margin: 0 0 18px; }
+  .byline { font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 10px 0; margin-bottom: 34px; }
+  h2 { font-size: 21px; margin: 42px 0 10px; }
+  h3 { font-size: 16.5px; margin: 22px 0 6px; }
+  p { margin: 0 0 14px; }
+  ul, ol { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 7px; }
+  sup a { text-decoration: none; font-size: 12px; }
+  .summary { background: var(--accent-soft); border-radius: 12px; padding: 18px 20px; }
+  .summary ul { margin-bottom: 0; }
+  .hyp { display: inline-block; font-size: 12px; font-weight: 600; padding: 0 8px; border-radius: 99px; background: var(--hyp-soft); color: var(--hyp); vertical-align: 1px; }
+  .steps { list-style: none; padding: 0; counter-reset: s; }
+  .steps li { counter-increment: s; position: relative; padding: 12px 14px 12px 50px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; margin-bottom: 8px; }
+  .steps li::before { content: counter(s); position: absolute; left: 14px; top: 11px; width: 24px; height: 24px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-weight: 700; font-size: 13px; display: grid; place-items: center; }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 16px; font-size: 15px; }
+  th, td { text-align: left; vertical-align: top; padding: 9px 10px 9px 0; border-bottom: 1px solid var(--line); }
+  th { font-size: 13px; color: var(--muted); font-weight: 600; }
+  .mock { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 6px 16px; margin: 14px 0 6px; font-size: 15px; }
+  .mock .row { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .mock .row:last-child { border-bottom: 0; }
+  .mock .st { white-space: nowrap; font-size: 13px; font-weight: 600; }
+  .st.done { color: var(--ok); } .st.you { color: var(--hyp); } .st.wait { color: var(--muted); }
+  .caption { font-size: 13.5px; color: var(--muted); }
+  .sources { font-size: 14px; color: var(--muted); }
+  .sources li { margin-bottom: 4px; word-break: break-word; }
+  footer { margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 15px; }
+  @media (max-width: 600px) { table { font-size: 14px; } .mock .row { flex-direction: column; gap: 2px; } }
+</style>
+</head>
+<body>
+<main>
+
+<p class="meta">Product case · November 2026</p>
+<h1>Revolut already offers an account switch in Portugal. How could it move more salaries?</h1>
+<p class="lede">Revolut counts a customer as “main bank” when their salary arrives at Revolut. In Portugal, a legal switching service can move a salary, bills and standing orders within two to three weeks.<sup><a href="#s4">4</a></sup> Revolut offers it as a PDF form, and its help page lists the payments the service does not cover.<sup><a href="#s5">5</a></sup> This case proposes moving the switch into the app and guiding customers through the payments it leaves out.</p>
+<div class="byline">Julius Petersen, MSc student at Nova SBE, Lisbon. Independent work based on public sources; not affiliated with or reviewed by Revolut. Statements marked <span class="hyp">Hypothesis</span> are my assumptions and would need checking against internal data.</div>
+
+<div class="summary">
+  <ul>
+    <li><strong>Goal:</strong> more customers in Portugal whose salary arrives at Revolut, which is Revolut's definition of a main-bank customer.<sup><a href="#s3">3</a></sup></li>
+    <li><strong>What exists:</strong> the regulated switching service. Revolut asks the old bank for a list of the last 13 months of recurring payments and notifies the employer and billers.<sup><a href="#s4">4</a></sup></li>
+    <li><strong>Where it may break</strong> <span class="hyp">Hypothesis</span> The request is a PDF that must be signed and uploaded, and the customer can't see progress. Card subscriptions, social security payments and mortgages keep the old account alive, and the service doesn't cover them.</li>
+    <li><strong>Proposal:</strong> request the switch inside the app, track every payment on the list Revolut already receives, and give next steps for each payment the service skips.</li>
+    <li><strong>Measure:</strong> main-bank status, by Revolut's definition, within 60 days of the request.</li>
+  </ul>
+</div>
+
+<h2>1. Revolut's goal in Portugal: the salary</h2>
+<ul>
+  <li>Revolut's 2024 annual report names adoption as a primary account, “i.e. customers receive their salary in Revolut”, as its retail focus. Customers using Revolut as their main bank grew 59% that year. A main-bank customer is one with salary-classified income above 60% of the country's average monthly salary.<sup><a href="#s3">3</a></sup></li>
+  <li>In Portugal, Revolut had over 2.3 million customers in April 2026, aimed for 2.5 million by the end of 2026, and wants to overtake Caixa Geral de Depósitos as the largest bank by customers in the coming years.<sup><a href="#s8">8</a></sup> It moved customers to Portuguese PT50 IBANs and joined MB WAY in 2025.<sup><a href="#s1">1</a>,<a href="#s2">2</a></sup></li>
+  <li>Ignacio Zunzunegui, Revolut's Growth Director for Southern Europe, said the local IBAN removed one of the biggest obstacles “to becoming the main account”.<sup><a href="#s1">1</a></sup></li>
+</ul>
+<p>Revolut already has the customers. The salaries are what is left.</p>
+
+<h2>2. The switching service today: a signed PDF and a list of exclusions</h2>
+<p>Under Decree-Law 107/2017, Revolut runs the regulated switching service for accounts in Portugal. It is free for the customer when Revolut is the receiving bank.<sup><a href="#s4">4</a>,<a href="#s5">5</a></sup> The process has three steps:</p>
+<ol class="steps">
+  <li>The customer downloads the switching form, fills it in, signs it (every holder of a joint account must sign) and uploads it on Revolut's switching web page.</li>
+  <li>Within 2 working days, Revolut asks the old bank for the standing orders, direct debits and recurring incoming transfers of the last 13 months. The old bank has 5 working days to send them.</li>
+  <li>Within 5 working days of receiving that list, Revolut sets up the standing orders and direct debits and tells the payers and creditors named on the form, including an employer, about the new account.</li>
+</ol>
+<p>Revolut's help page lists what the service does <em>not</em> cover:<sup><a href="#s5">5</a></sup> some incoming payments such as social benefits, direct debits from some companies, recurring payments made with the old debit card, and credit lines.</p>
+
+<h2>3. Four hypotheses on where customers drop out</h2>
+<p>None of these are tested. Section 4 shows how I would check each one.</p>
+<table>
+  <thead><tr><th>Hypothesis</th><th>Reasoning</th></tr></thead>
+  <tbody>
+    <tr><td><span class="hyp">H1</span> The PDF form is where most people stop.</td><td>Downloading, signing and uploading a form is slow on a phone, and every holder of a joint account must sign.</td></tr>
+    <tr><td><span class="hyp">H2</span> People keep the old account for the payments the service skips.</td><td>Revolut's own list of exclusions: card subscriptions, some billers, social benefits.<sup><a href="#s5">5</a></sup> One payment left on the old card is enough reason to keep that account open.</td></tr>
+    <tr><td><span class="hyp">H3</span> Mortgage holders are locked in.</td><td>Some Portuguese banks, ABANCA for example, lower the mortgage rate when the salary is paid into an account with them.<sup><a href="#s6">6</a></sup> Revolut plans mortgages in Portugal, but not in 2026.<sup><a href="#s8">8</a></sup> For these customers, moving the salary can cost money.</td></tr>
+    <tr><td><span class="hyp">H4</span> Customers can't see where the switch stands.</td><td>Two to three weeks of steps between the banks, then a payroll cycle. Revolut says the old account must keep enough money for its payments in the meantime.<sup><a href="#s4">4</a></sup> Without status updates, people may stop halfway or keep both accounts running.</td></tr>
+  </tbody>
+</table>
+
+<h2>4. What I would check before building</h2>
+<ul>
+  <li><strong>Funnel on the switching page:</strong> visits → form downloaded → uploaded → old bank's list received → first salary. This shows whether H1 holds.</li>
+  <li><strong>The 13-month lists Revolut has received:</strong> how many payments the service covered, how many were card subscriptions or social benefits, how often a mortgage debit appears (H2, H3).</li>
+  <li><strong>Customers with a PT50 IBAN but no salary-classified income:</strong> the size of the opportunity.</li>
+  <li><strong>8–10 interviews</strong> in Lisbon with people who started a switch and stopped, plus support tickets about switching. If the main reason is trust rather than effort, a better flow won't help and the work should go into communication.</li>
+</ul>
+
+<h2>5. Proposal: the switch inside the app</h2>
+<h3>a) Request the switch in the app</h3>
+<p>Fill the form from data Revolut already has, sign inside the app, and let a joint holder co-sign from their own app. <span class="hyp">Open question for Legal</span> The service must be requested in writing.<sup><a href="#s4">4</a></sup> Before building, I would check whether an in-app signature meets that requirement.</p>
+
+<h3>b) A tracker built from the old bank's list</h3>
+<p>The tracker shows the list Revolut receives from the old bank, with a status for each item:</p>
+<div class="mock" aria-label="Example switch tracker">
+  <div class="row"><span>Salary · employer notified on 3 Mar</span><span class="st wait">Waiting for payday</span></div>
+  <div class="row"><span>Electricity · direct debit</span><span class="st done">Moved</span></div>
+  <div class="row"><span>Rent · standing order</span><span class="st done">Moved</span></div>
+  <div class="row"><span>Streaming · paid with old card</span><span class="st you">Update your card</span></div>
+  <div class="row"><span>Old account balance</span><span class="st you">Keep €120 until 14 Mar</span></div>
+</div>
+<p class="caption">Illustration with made-up data. When the first salary arrives, the tracker confirms it and suggests closing the old account once nothing is left on it.</p>
+
+<h3>c) Next steps for payments the service skips</h3>
+<ul>
+  <li><strong>Card subscriptions:</strong> the customer marks which services they pay by card. Each one gets a short guide and is ticked off when its first charge appears on the Revolut card.</li>
+  <li><strong>Social security and tax refunds:</strong> steps to change the IBAN on Segurança Social Direta and the Portal das Finanças.</li>
+  <li><strong>Mortgage holders:</strong> no push to switch. Tell them that moving the salary may raise their mortgage rate, and let them keep using Revolut for everyday spending. When Revolut launches mortgages in Portugal, this group becomes the next target.</li>
+</ul>
+
+<h3>Not in the first version</h3>
+<ul>
+  <li><strong>Cash bonuses for switching:</strong> they make it hard to tell whether the flow itself works.</li>
+  <li><strong>Reading the old bank's data through open banking:</strong> useful for finding card subscriptions, but a bigger project and not needed to test H1 and H2.</li>
+</ul>
+
+<h2>6. Sizing: reach, value per customer, cost</h2>
+<p>I can't put a euro figure on this from public data. With internal data I would size it in three parts:</p>
+<ul>
+  <li><strong>Reach:</strong> one percentage point of Revolut's 2.3 million customers in Portugal is about 23,000 people.<sup><a href="#s8">8</a></sup></li>
+  <li><strong>Value per customer:</strong> how main-bank customers compare with others on balances, card spend and retention. Revolut has these numbers; I don't.</li>
+  <li><strong>Cost (my estimate):</strong> low for a banking feature. The legal process, the messages between banks and the old bank's list already exist. The new work is the in-app request and the tracker.</li>
+</ul>
+<p><span class="hyp">Hypothesis</span> Every EU country has a regulated switching service under the Payment Accounts Directive, with national differences. If the tracker works in Portugal, Revolut could adapt it in other countries where it runs a local branch.</p>
+
+<h2>7. Metric and test: main-bank status within 60 days</h2>
+<table>
+  <tbody>
+    <tr><th scope="row">Primary</th><td>Share of customers who start a switch and reach main-bank status, by Revolut's definition, within 60 days. 60 days covers the bank steps plus at least one payroll cycle.</td></tr>
+    <tr><th scope="row">Funnel</th><td>started → submitted → old bank's list received → first salary → third salary</td></tr>
+    <tr><th scope="row">Guardrails</th><td>Missed or double-paid bills during the switch, support contacts per switch, complaints about switching</td></tr>
+  </tbody>
+</table>
+<p>Employees in Portugal receive a Christmas subsidy worth one month's pay by 15 December, and a holiday subsidy, normally paid before their holidays.<sup><a href="#s7">7</a></sup> Salary detection has to treat these as one-off extra payments.</p>
+<p><strong>Test:</strong> the PDF route stays available to everyone, so the experiment changes only the entry point. Half of eligible customers get the in-app request and tracker; the other half keep today's PDF flow. Roll out if the primary metric improves and no guardrail gets worse. If people submit but salaries don't arrive, the problem is on the employer's side, and the next thing to improve is the notice employers receive.</p>
+
+<h2>8. About me</h2>
+<p>I study at Nova SBE in Lisbon and have a BSc in Information Systems. At an energy-tech scale-up I build data tools with the operations teams who use them. I also built <a href="https://crawl-advisor.bot-pulse.workers.dev">AI Crawler Advisor</a>, a small web product, and rebuilt it when testing showed its advice suited a news publisher but not a bakery.</p>
+
+<h2>Sources</h2>
+<ol class="sources">
+  <li id="s1">Lusa via AMAN Alliance, “Revolut has 2M clients, opens access to Multibanco system”, 6 Oct 2025. <a href="https://www.aman-alliance.org/Home/ContentDetail/95621">aman-alliance.org</a></li>
+  <li id="s2">ECO News, “Revolut reaches agreement with SIBS and officially joins MB Way”, 6 Oct 2025. <a href="https://econews.pt/2025/10/06/revolut-reaches-agreement-with-sibs-and-officially-joins-mb-way/">econews.pt</a></li>
+  <li id="s3">Revolut Group Holdings, Annual Report 2024, pp. 9 and 19. <a href="https://assets.revolut.com/pdf/annualreport2024.pdf">assets.revolut.com</a></li>
+  <li id="s4">Revolut Portugal, “Account Switching” (legal terms). <a href="https://www.revolut.com/en-PT/legal/account-switching/">revolut.com</a></li>
+  <li id="s5">Revolut Help (PT), “Como posso mudar a minha conta bancária existente para a Revolut?” <a href="https://help.revolut.com/pt-PT/help/profile-and-plan/account-switching/switching-another-account-to-revolut/">help.revolut.com</a></li>
+  <li id="s6">ABANCA Portugal, Crédito Habitação. <a href="https://www.abanca.pt/pt/credito/credito-habitacao-abanca-taxa-mista/">abanca.pt</a></li>
+  <li id="s7">CGD Saldo Positivo, articles on the Christmas and holiday subsidies. <a href="https://www.cgd.pt/Site/Saldo-Positivo/Dicas-by-DABOX/Pages/Subsidio-de-Natal.aspx">Natal</a> · <a href="https://www.cgd.pt/Site/Saldo-Positivo/trabalho/Pages/subsidio-de-ferias.aspx">férias</a></li>
+  <li id="s8">Dinheiro Vivo, interview with Rúben Germano, Revolut's country manager for Portugal, 22 Apr 2026. <a href="https://dinheirovivo.dn.pt/empresas/revolut-quer-alcanar-25-milhes-de-portugueses-em-2026-e-superar-a-cgd-nos-prximos-anos">dinheirovivo.dn.pt</a></li>
+</ol>
+
+<footer>
+  Julius Petersen · <a href="https://www.linkedin.com/in/julius-petersen-is">LinkedIn</a> · <a href="https://crawl-advisor.bot-pulse.workers.dev">AI Crawler Advisor</a> · <a href="https://crawl-advisor.bot-pulse.workers.dev/product-notes">product notes</a>
+</footer>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "account-switch-case",
+  "compatibility_date": "2026-10-01",
+  // Static page only: public/index.html
+  "assets": { "directory": "./public" }
+}
